@@ -2,9 +2,7 @@
 const CRUD = (db, table)=>{
     const findAllItems = async ()=> await db.any(`SELECT * FROM ${table}`);
 
-    const findItemById = async (id)=> {
-        let album = await db.one(`SELECT * FROM ${table} WHERE id='${id}'`);
-    };
+    const findItemById = async (id)=>  await db.one(`SELECT * FROM ${table} WHERE id='${id}'`);
 
     const createNewItem = async (optValues)=>await db.one(`
         INSERT INTO 
